@@ -1,5 +1,9 @@
 export default class View {
-  constructor() {}
+  constructor(tasks) {
+    tasks.forEach((task) => {
+      this.renderTask(task);
+    });
+  }
 
   elements = {
     input: document.getElementById("newTask"),
