@@ -12,14 +12,17 @@ export default class View {
   };
 
   renderTask(taskObject) {
+    const completeClass = taskObject.status === "done" ? "completed" : "";
+    const checked = taskObject.status === "done" ? "checked" : "";
+
     const taskHTML = `
-        <li class="todo-item">
-            <label class="todo-item-label">
-                <input class="checkbox" type="checkbox" />
-                <span>${taskObject.text}</span>
-                <button class="btn btn-secondary btn-sm">Удалить</button>
-            </label>
-        </li>
+      <li class="todo-item">
+        <label class="todo-item-label">
+            <input class="checkbox" type="checkbox" ${checked} />
+            <span class="${completeClass}">${taskObject.text}</span>
+            <button class="btn btn-secondary btn-sm">Удалить</button>
+        </label>
+      </li>
     `;
     this.elements.tasksList.insertAdjacentHTML("beforeend", taskHTML);
   }
