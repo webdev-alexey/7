@@ -26,4 +26,8 @@ export default class View {
     `;
     this.elements.tasksList.insertAdjacentHTML("beforeend", taskHTML);
   }
+
+  clearInput() {
+    this.elements.input.value = "";
+  }
 }
