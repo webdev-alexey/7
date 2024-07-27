@@ -11,8 +11,7 @@ view.elements.form.addEventListener("submit", function (e) {
   view.clearInput();
 });
 
-// model.addTask("Заверстать стартовый шаблон");
-// model.addTask("Написать скрипт");
-// model.addTask("Записать урок");
-// model.doneTask(model.tasks[1]);
-// console.log(model);
+view.elements.tasksList.addEventListener("click", function (e) {
+  if (e.target.getAttribute("type") === "checkbox") {
+  }
+});
