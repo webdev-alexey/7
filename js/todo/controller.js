@@ -16,5 +16,7 @@ view.elements.tasksList.addEventListener("click", function (e) {
     const id = e.target.closest(".todo-item").dataset.id;
     const task = model.findTask(id);
     model.doneTask(task);
+
+    view.changeStatus(task);
   }
 });
