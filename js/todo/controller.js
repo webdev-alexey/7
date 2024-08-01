@@ -15,8 +15,14 @@ view.elements.tasksList.addEventListener("click", function (e) {
   if (e.target.getAttribute("type") === "checkbox") {
     const id = e.target.closest(".todo-item").dataset.id;
     const task = model.findTask(id);
-    model.doneTask(task);
-
+    model.changeStatus(task);
     view.changeStatus(task);
+  }
+
+  if (e.target.hasAttribute("data-delete")) {
+    const id = e.target.closest(".todo-item").dataset.id;
+    const task = model.findTask(id);
+    model.removeTask(task);
+    view.removeTask(task);
   }
 });
